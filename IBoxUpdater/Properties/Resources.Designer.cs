@@ -69,5 +69,15 @@ namespace IBoxUpdater.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap old_edit_redo_4967 {
+            get {
+                object obj = ResourceManager.GetObject("old-edit-redo_4967", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

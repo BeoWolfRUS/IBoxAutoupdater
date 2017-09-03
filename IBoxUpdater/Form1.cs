@@ -21,14 +21,24 @@ namespace IBoxUpdater
         double interval = double.Parse(Properties.Settings.Default.UpdateInterval) * 1000 *60 *60;
         System.Timers.Timer timer = new System.Timers.Timer();
 
+        private bool CheckInternet()
+        {
+            bool internet = System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable();
+            return internet;
+        }
 
         public IBoxUpdateUtility()
         {
+            while (!CheckInternet())
+            {
+                CheckInternet();
+            }
 
             InitializeComponent();
 
             timer.Interval = interval;
 
+            
 
             cbAutoDownload.Checked = Properties.Settings.Default.AutoDownload;
             cbAutoCheckUpdates.Checked = Properties.Settings.Default.CheckUpdates;
